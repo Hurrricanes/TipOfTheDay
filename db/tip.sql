@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2014 at 06:17 AM
+-- Generation Time: Dec 01, 2014 at 09:16 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `tip_of_the_day`.`tip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tip` varchar(255) NOT NULL,
   `author` varchar(25) NOT NULL,
-  `sha` varchar(40) DEFAULT NOT NULL,
+  `sha` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
