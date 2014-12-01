@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `tip_of_the_day`.`tip` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tip` varchar(255) NOT NULL,
   `author` varchar(25) NOT NULL,
-  `hash` varchar(40) DEFAULT NULL,
+  `sha` varchar(40) DEFAULT NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
