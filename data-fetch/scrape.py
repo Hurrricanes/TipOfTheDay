@@ -1,6 +1,7 @@
 import twitter
 import hashlib
-import MySQLdb
+import mysql.connector
+from unidecode import unidecode
 
 __author__ = 'grainier'
 
@@ -12,7 +13,15 @@ api = twitter.Api(
     access_token_secret='VkUrd6Cn846UBHBeV898dSG129xF1UovNPi1PJqGgfioo'
 )
 tweets = api.GetUserTimeline(screen_name='@quotepage', count=200)
-db = MySQLdb.connect("localhost", "root", "root", "tip_of_the_day")
+
+config = {
+    'user': 'root',
+    'password': 'root',
+    'host': '127.0.0.1',
+    'database': 'tip_of_the_day',
+}
+
+db = mysql.connector.connect(**config)
 cursor = db.cursor()
 quotes = []
 
@@ -22,20 +31,21 @@ for tweet in tweets:
     if valid:
         quote = text.split(' - ')[0].strip('"')
         author = text.split(' - ')[1].strip('"')
-        sha = hashlib.sha1(text).hexdigest()
-        quotes.append({
-            "quote": quote,
+
+        sha_txt = ''.join(e for e in unidecode(text) if e.isalnum()).lower()
+        sha = hashlib.sha1(sha_txt).hexdigest()
+        q = {
+            "tip": quote,
             "author": author,
             "sha": sha
-        })
-        sql = "INSERT INTO tip(tip, author, sha) VALUES ('%s', '%s', '%s')" % (quote, author, sha)
+        }
+        sql = ("INSERT INTO tip (tip, author, sha) VALUES (%(tip)s, %(author)s, %(sha)s)")
 
         try:
-            cursor.execute(sql)
+            cursor.execute(sql, q)
             db.commit()
             pass
         except:
-            db.rollback()
             pass
         pass
     pass
