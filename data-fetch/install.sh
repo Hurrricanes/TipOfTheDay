@@ -13,10 +13,7 @@ SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
 
 # List of apt-get applications to install
 LIST_OF_APPS="
-    "
-
-# List of aptitude applications to install
-LIST_OF_APTITUDE="
+    python-pip
     "
 
 # List of easy install applications to install
@@ -26,7 +23,8 @@ LIST_OF_EASY_INSTALL="
 
 # List of python pip libraries to install
 LIST_OF_PY_LIBS="
-    https://pypi.python.org/packages/source/M/MySQL-python/MySQL-python-1.2.5.zip#md5=654f75b302db6ed8dc5a898c625e030c
+    http://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.0.2.zip
+    https://pypi.python.org/packages/source/U/Unidecode/Unidecode-0.04.16.tar.gz
     "
 
 #-----------------------------------------------#
@@ -41,10 +39,9 @@ dpkg-reconfigure locales
 # Install apt-get packages
 sudo apt-get update
 sudo apt-get install -y ${LIST_OF_APPS}
-sudo aptitude install -y ${LIST_OF_APTITUDE}
 
 # Install easy_install packages
-sudo easy_install-2.7 ${LIST_OF_EASY_INSTALL}
+sudo easy_install ${LIST_OF_EASY_INSTALL}
 
 # Install python packages
 sudo pip install ${LIST_OF_PY_LIBS}
