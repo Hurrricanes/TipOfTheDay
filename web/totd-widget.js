@@ -34,8 +34,20 @@
 	}
 
 	function main() { 
-	    jQuery(document).ready(function($) {
-	    	
-	    });
+	    jQuery(document).ready(function($) { 
+	        // load CSS
+	        var css_link = $("<link>", { 
+	            rel: "stylesheet", 
+	            type: "text/css", 
+	            href: "widget.css" 
+	        });
+	        css_link.appendTo('head');          
+
+	        // load HTML
+	        var jsonp_url = "http://localhost/totd/web/widgetHandler.php?callback=getWidget";
+	        $.getJSON(jsonp_url, function(data) {
+	        	$('#quote-today').html(data.html);
+	        });
+    	});
 	}
 })();
