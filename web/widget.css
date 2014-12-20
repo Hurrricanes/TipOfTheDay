@@ -5,26 +5,26 @@
 	text-align: justify;
 }
 #totd-widget {
-  background-color: #EBEBEB;
+  background-color: #1FA67A;
 }
 #totd-widget-body {
-  background-color: #717171;
-  padding: 5px;
+  background-color: #EBEBEB;
 }
 #totd-widget-head , #totd-widget-body {
 	padding: 0px 20px;
 }
 #totd-widget h1 {
-  color: #717171;
+  color: #FFF;
   font-family: Futura,Trebuchet MS,Arial,sans-serif;
   font-size: 18px; 
   font-style: normal; 
   font-variant: normal; 
   font-weight: 700; 
   margin: 0px; 
+  text-shadow: 4px 3px 0px #1D9D74, 5px 3px 0px rgba(0, 0, 0, 0.15);
 }
 #totd-widget p {
-  color: #EBEBEB;
+  color: #1FA67A;
   font-family: Futura,Trebuchet MS,Arial,sans-serif;
   font-size: 14px; 
   font-style: normal; 
@@ -33,7 +33,7 @@
   line-height: 1.5; 
 }
 #totd-widget small {
-  color: #EBEBEB;
+  color: #1FA67A;
   font-family: Futura,Trebuchet MS,Arial,sans-serif;
   font-size: 12px; 
   font-style: normal; 
