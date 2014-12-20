@@ -1,34 +1,48 @@
-#qoute-author {
+#totd-qoute-author {
 	text-align: right;
 }
-
-#quote-body {
+#totd-quote-body {
 	text-align: justify;
 }
-#widget {
-	margin: 10px;
+#totd-widget {
+  background-color: #EBEBEB;
 }
-#widget-head , #widget-body {
+#totd-widget-body {
+  background-color: #717171;
+  padding: 5px;
+}
+#totd-widget-head , #totd-widget-body {
 	padding: 0px 20px;
 }
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
+#totd-widget h1 {
+  color: #717171;
+  font-family: Futura,Trebuchet MS,Arial,sans-serif;
+  font-size: 18px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+  margin: 0px; 
 }
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
-.h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, 
-h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small,
-.h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
-  font-weight: normal;
-  line-height: 1;
-  color: #777;
+#totd-widget p {
+  color: #EBEBEB;
+  font-family: Futura,Trebuchet MS,Arial,sans-serif;
+  font-size: 14px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 200; 
+  line-height: 1.5; 
 }
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+#totd-widget small {
+  color: #EBEBEB;
+  font-family: Futura,Trebuchet MS,Arial,sans-serif;
+  font-size: 12px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 100; 
+}
+#totd-widget hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 0;
   border-top: 1px solid #eee;
 }

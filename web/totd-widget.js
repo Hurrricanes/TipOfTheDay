@@ -36,12 +36,19 @@
 	function main() { 
 	    jQuery(document).ready(function($) { 
 	        // load CSS
-	        var css_link = $("<link>", { 
+	        var cssLink = $("<link>", { 
 	            rel: "stylesheet", 
 	            type: "text/css", 
 	            href: "widget.css" 
 	        });
-	        css_link.appendTo('head');          
+	        cssLink.appendTo('head'); 
+	          
+	        var fontAwesome =    $("<link>", { 
+	            rel: "stylesheet", 
+	            type: "text/css", 
+	            href: "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" 
+	        });
+	        fontAwesome.appendTo('head');     
 
 	        // load HTML
 	        var jsonp_url = "http://localhost/totd/web/widgetHandler.php?callback=getWidget";
